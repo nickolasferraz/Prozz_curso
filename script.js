@@ -1,17 +1,30 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Capturando os elementos do HTML
-    const titulo = document.getElementById("titulo");
-    const listaNaoOrdenada = document.querySelector("ul");
-    const link = document.getElementById("link");
-    const listaOrdenada = document.getElementById("lista-ordenada");
+document.addEventListener("DOMContentLoaded", function () {
+  // Seu código JavaScript aqui
+  const titulo = document.createElement("h1");
+  titulo.textContent = "Produto em Promoção";
+  titulo.id = "titulo"; // Atribuindo o id diretamente
+  document.body.appendChild(titulo);
 
-    // Adicionando conteúdo textual aos elementos
-    titulo.innerText = "Título do Projeto";
-    link.innerText = "Link para Proz Educação";
+  const produto = document.createElement("div");
+  produto.classList.add("produto");
 
-    // Adicionando itens simples na lista não ordenada
-    listaNaoOrdenada.innerHTML = "<li>Item 1</li><li>Item 2</li><li>Item 3</li>";
+  const nome = document.createElement("h2");
+  nome.textContent = "Smartphone XYZ";
+  produto.appendChild(nome);
 
-    // Adicionando itens com links para outros sites na lista ordenada
-    listaOrdenada.innerHTML = "<li><a href='https://www.example.com'>Link 1</a></li><li><a href='https://www.example.org'>Link 2</a></li><li><a href='https://www.example.net'>Link 3</a></li>";
+  const descricao = document.createElement("p");
+  descricao.textContent =
+    "Um smartphone de última geração, com câmera de alta resolução e bateria de longa duração.";
+  produto.appendChild(descricao);
+
+  const preco = document.createElement("p");
+  preco.textContent = "Preço: R$ 1.299,00";
+  produto.appendChild(preco);
+
+  // Adicionar a imagem do produto (exemplo)
+  const imagem = document.createElement("img");
+  imagem.src = "caminho/para/imagem.jpg";
+  produto.appendChild(imagem);
+
+  document.body.appendChild(produto); // Adicionando o produto ao body
 });
